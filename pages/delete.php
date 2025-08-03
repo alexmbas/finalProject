@@ -17,7 +17,7 @@ $tech = $stmt->fetch();
 if ($tech && !empty($tech['image'])) {
     $imagePath = "../" . $tech['image'];
     if (file_exists($imagePath)) {
-        unlink($imagePath); //I'm deleting the image here from our folder
+        unlink($imagePath); // I'm deleting the image here from our folder
     }
 }
 
@@ -25,6 +25,6 @@ if ($tech && !empty($tech['image'])) {
 $deleteStmt = $pdo->prepare("DELETE FROM techniques WHERE id = :id");
 $deleteStmt->execute([':id' => $id]);
 
-header("Location: list.php");
+header("Location: /pages/list.php");
 exit;
 ?>

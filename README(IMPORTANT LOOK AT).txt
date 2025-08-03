@@ -52,3 +52,10 @@ username:coachTest
 password:testCoach
 Enjoy!
 
+
+****Deployment Issues, summary for what had to be done*****
+During deployment for my website I ran into several issues that required some time to fix. The initial links provided in the course work simply did not work or caused issues (Would not accept my finalProject folders size, or database errors). I decided to use Heroku with the help of several classmates. One of the main challenges I ran into involved handling file paths and ensuring they aligned with Herokus file system structure and routing expectations. 
+
+All internal file paths were reviewed and I updated to use relative URLs that are compatible with Herokus directory structure. 
+
+Environment configuration was also adjusted to support Herokus JAWSDB_URL for database access (A huge issue I was encountering with other sites), this allowed the app to connect securely to the MySQL database. I hope this is acceptable. Thanks!

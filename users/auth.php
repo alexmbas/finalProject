@@ -16,7 +16,7 @@ function isAdmin() {
 function requireAdmin() {
     if (!isLoggedIn() || !isAdmin()) {
         // Send user to the login page if not authorized
-        header("Location: ../users/login.php");
+        header("Location: /login");
         exit;
     }
 }

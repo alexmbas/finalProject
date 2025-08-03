@@ -80,7 +80,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <button type="submit" class="btn btn-success">Create User</button>
 </form>
 
-<!-- Navigation link back to the user management page -->
-<p><a href="manage.php">← Back to User List</a></p>
+<p><a href="/users">← Back to User List</a></p>
 
 <?php require_once '../includes/footer.php'; ?>

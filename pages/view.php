@@ -128,7 +128,6 @@ $comments = $comStmt->fetchAll();
     <button type="submit" class="btn btn-primary">Submit Comment</button>
 </form>
 
-<!-- Link to return to the technique list -->
-<p><a href="list.php">← Back to List</a></p>
+<p><a href="/techniques">← Back to List</a></p>
 
 <?php require_once '../includes/footer.php'; ?>

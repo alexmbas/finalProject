@@ -1,5 +1,5 @@
 <?php
-require_once '../users/auth.php';
+require_once 'auth.php';
 requireAdmin();
 
 require_once '../db/config.php';
@@ -62,14 +62,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <h1 class="mb-4">Edit User</h1>
 
-<!-- Display any validation errors -->
 <?php if ($errors): ?>
     <ul class="text-danger">
         <?php foreach ($errors as $e): ?><li><?= htmlspecialchars($e) ?></li><?php endforeach; ?>
     </ul>
 <?php endif; ?>
 
-<!-- Form to edit user details -->
 <form method="POST" class="mb-5">
     <div class="mb-3">
         <label>Username (email):</label>
@@ -94,7 +92,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <button type="submit" class="btn btn-primary">Update User</button>
 </form>
 
-<!-- Navigation link to return to the user list -->
 <p><a href="manage.php">← Back to User List</a></p>
 
 <?php require_once '../includes/footer.php'; ?>

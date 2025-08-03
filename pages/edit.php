@@ -43,7 +43,7 @@ EOT;
 
 // Validate that a technique ID was passed in the URL.
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    header("Location: list.php");
+    header("Location: /pages/list.php");
     exit;
 }
 
@@ -130,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':img' => $image_path,
             ':id' => $id
         ]);
-        header("Location: view.php?id=" . $id);
+        header("Location: /pages/view.php?id=" . $id); // <- updated line for Heroku
         exit;
     }
 }

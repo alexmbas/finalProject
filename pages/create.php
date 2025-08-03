@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ':cat' => $category_id,
                 ':img' => $image_path
             ]);
-            header("Location: list.php");
+            header("Location: /pages/list.php");
             exit;
         } catch (PDOException $e) {
             $errors[] = 'Database error: ' . $e->getMessage();

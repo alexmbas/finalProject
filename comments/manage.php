@@ -7,7 +7,7 @@ requireAdmin();
 require_once '../db/config.php';
 require_once '../includes/header.php';
 
-//Handle comment deletion if a valid ID is passed via the URL
+// Handle comment deletion if a valid ID is passed via the URL
 if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
     $delId = (int) $_GET['delete']; // Cast ID to integer for safety
     // Prepare and execute the delete query
@@ -73,9 +73,9 @@ $comments = $stmt->fetchAll();
                 <td><?= $c['created_at'] ?></td>
                 <td>
                     <!-- Delete button with a confirmation prompt -->
-                    <a href="?delete=<?= $c['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Delete this comment?')">Delete</a>
+                    <a href="manage.php?delete=<?= $c['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Delete this comment?')">Delete</a>
                     <!-- Disemvowel button to strip vowels from the comment -->
-                    <a href="?disemvowel=<?= $c['id'] ?>" class="btn btn-sm btn-warning">Disemvowel</a>
+                    <a href="manage.php?disemvowel=<?= $c['id'] ?>" class="btn btn-sm btn-warning">Disemvowel</a>
                 </td>
             </tr>
         <?php endforeach; ?>

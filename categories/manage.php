@@ -34,7 +34,7 @@ if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
     $delId = (int) $_GET['delete']; // Ensure ID is an integer
     // Prepare and execute the deletion query
     $pdo->prepare("DELETE FROM categories WHERE id = :id")->execute([':id' => $delId]);
-    // Redirect back to the samepage after deletion to prevent resubmission
+    // Redirect back to the same page after deletion to prevent resubmission
     header("Location: manage.php");
     exit;
 }
@@ -84,7 +84,7 @@ $categories = $stmt->fetchAll();
                 <td><?= htmlspecialchars($cat['name']) ?></td>
                 <td>
                     <!-- Delete button with confirmation prompt -->
-                    <a href="?delete=<?= $cat['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Delete this category?')">Delete</a>
+                    <a href="manage.php?delete=<?= $cat['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Delete this category?')">Delete</a>
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -94,3 +94,4 @@ $categories = $stmt->fetchAll();
 
 <!-- Include the footer -->
 <?php require_once '../includes/footer.php'; ?>
+

@@ -111,7 +111,7 @@ $techniques = $stmt->fetchAll();
         <td><?= htmlspecialchars($tech['created_at']) ?></td>
         <td>
           <!-- Action buttons; view, edit, delete -->
-          <a href="/WebDev2/finalProject/technique/<?= $tech['id'] ?>-<?= makeSlug($tech['name']) ?>" class="btn btn-sm btn-info">View</a>
+          <a href="/technique/<?= $tech['id'] ?>-<?= makeSlug($tech['name']) ?>" class="btn btn-sm btn-info">View</a>
           <a href="edit.php?id=<?= $tech['id'] ?>" class="btn btn-sm btn-warning">Edit</a>
           <a href="delete.php?id=<?= $tech['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Delete?')">Delete</a>
         </td>

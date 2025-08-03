@@ -60,14 +60,14 @@ if (session_status() === PHP_SESSION_NONE) session_start();
 <nav class="navbar navbar-expand-lg mb-4">
   <div class="container">
     <!-- Logo and Home Link -->
-    <a class="navbar-brand" href="/WebDev2/finalProject/pages/list.php">BJJ VAULT</a>
+    <a class="navbar-brand" href="/pages/list.php">BJJ VAULT</a>
     
     <!-- Left side navigation links -->
     <ul class="navbar-nav me-auto">
-      <li class="nav-item"><a class="nav-link" href="/WebDev2/finalProject/pages/create.php">Add Technique</a></li>
-      <li class="nav-item"><a class="nav-link" href="/WebDev2/finalProject/categories/manage.php">Categories</a></li>
-      <li class="nav-item"><a class="nav-link" href="/WebDev2/finalProject/users/manage.php">Users</a></li>
-      <li class="nav-item"><a class="nav-link" href="/WebDev2/finalProject/comments/manage.php">Comments</a></li>
+      <li class="nav-item"><a class="nav-link" href="/pages/create.php">Add Technique</a></li>
+      <li class="nav-item"><a class="nav-link" href="/categories/manage.php">Categories</a></li>
+      <li class="nav-item"><a class="nav-link" href="/users/manage.php">Users</a></li>
+      <li class="nav-item"><a class="nav-link" href="/comments/manage.php">Comments</a></li>
     </ul>
 
     <!-- Rightside user session controls -->
@@ -75,9 +75,9 @@ if (session_status() === PHP_SESSION_NONE) session_start();
       <?php if (!empty($_SESSION['user_id'])): ?>
         <!-- Greet the logged-in user -->
         <li class="nav-item"><span class="navbar-text">Hi, <?= htmlspecialchars($_SESSION['username']) ?></span></li>
-        <li class="nav-item"><a class="nav-link" href="/WebDev2/finalProject/users/logout.php">Logout</a></li>
+        <li class="nav-item"><a class="nav-link" href="/users/logout.php">Logout</a></li>
       <?php else: ?>
-        <li class="nav-item"><a class="nav-link" href="/WebDev2/finalProject/users/login.php">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="/users/login.php">Login</a></li>
       <?php endif; ?>
     </ul>
   </div>
