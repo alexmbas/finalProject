@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /WebDev2/finalProject/
+
+# Don't rewrite if the request is for an existing file or directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Prevent rewriting if already requesting the internal target (important!)
+RewriteCond %{REQUEST_URI} !^/WebDev2/finalProject/pages/view\.php$
+
+RewriteRule ^technique/([0-9]+)-([a-z0-9-]+)$ pages/view.php?id=$1&slug=$2 [L,QSA]

@@ -1,0 +1,19 @@
+{
+    "name": "user/final-project",
+    "description": "A jiu jitsu vault of techniques, API from Jiu Jitero will provided gyms and athlete information!",
+    "autoload": {
+        "psr-4": {
+            "User\\FinalProject\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "alexmbas",
+            "email": "97928275+alexmbas@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6",
+        "intervention/image": "2.7"
+    }
+}

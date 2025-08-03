@@ -1,0 +1,57 @@
+Easter Egg Summary - just some fun code to mess around with when I felt burnt out, I hope you try to find all 4 Easter Eggs BEFORE referring to the cheat sheet! Regardless, enjoy, it was a way of expressing myself through the code and having fun with the project in its final stages!
+
+ASCII Art in Source Code
+
+Located in: footer.php
+
+A block of detailed ASCII art, created using an online tool which I credited in the comments, has been embedded in the site’s HTML as a developer-facing Easter egg.
+
+It is placed within an HTML comment near the bottom of the source, only visible to those inspecting the code via "View Page Source" or DevTools.
+
+The Artwork is of "Craig Jones" a Jiu Jitsu Idol of mine from Australia, and somewhat of a comedian on the side! This was ultimately inspired by a website called "Lings Cars" where she built a car sales site using only basic HTML and CSS, however she threw in funny ASCII art of herself for curious 'inspect website' users! Shout out Lings Cars!!!!
+
+Konami Code Trigger (JS Keyboard Easter Egg)
+
+Implemented in: header.php
+
+When users input the classic Konami Code using their keyboard (↑ ↑ ↓ ↓ ← → ← → B A), an animated GIF pops up temporarily on the page.
+
+The trigger uses a keycode listener with a timed display of an image with a bit of a synth/retro wave aesthetic, I can't get enough of it.
+
+This is a non-intrusive JavaScript-based feature intended as a surprise interaction, hope you enjoy!
+
+We all like video games! Mortal Kombat and Street Fighter were a big part of my young life, this easter egg pays homage to that. The Cat represents how I have felt during my entire coding journey thus far! Haha!
+
+Developer Console Easter Egg (Matrix + Jiu Jitsu Style)
+
+Implemented in: footer.php
+
+Upon opening the browser console, the user is presented with a styled sequence of console log messages:
+
+“Wake up, user...”
+
+“The Jiu Jitsu Vault has you...”
+
+“Follow the white belt 🥋”
+
+Paying homage to one of the greatest films ever made, The Matrix - it's what got me into Martial Arts as a kid. Hope you enjoy the message!
+
+Hidden Easter Egg Page: /easteregg.php
+
+A separate page accessible only by those who “follow the white belt.” (Another Matrix reference, but with a Jiu Jitsu twist)!
+
+The link is subtly included at the bottom of every page via a nearly invisible <p> tag styled to blend into the background (footer.php). It will be to the right of the Komono Emoji!
+
+The page features:
+
+A hidden Matrix-themed visual layout (I wanted to flex my CSS muscles here a bit, I have been reading up on the HTML/CSS and JavaScript languages through Jon Ducketts books. Thanks Jon Duckett for the confidence boost!).
+
+A floating Morpheous image (NEEEEOOO!!!)
+
+A red pill and blue pill interaction:
+
+Red Pill keeps the user on the page
+
+Blue Pill returns them to the main list of techniques (list.php)
+
+Ultimately this was my favourite part of the project, I hope you enjoy the little Easter Eggs I planted throughout the site - I'm hoping to show off my personality (Less professional side) and what I find interesting. 
