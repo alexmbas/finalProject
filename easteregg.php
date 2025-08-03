@@ -103,7 +103,7 @@
 
   <div>
     <a href="#" class="pill red">Red Pill</a>
-    <a href="/WebDev2/finalProject/pages/list.php" class="pill blue">Blue Pill</a>
+    <a href="/pages/list.php" class="pill blue">Blue Pill</a>
   </div>
 
   <div class="belt">

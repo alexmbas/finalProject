@@ -48,7 +48,7 @@ They are left in the project intentionally to show the testing steps taken while
 Thank you for reviewing this project. I hope the explanations above make clear the efforts made, especially around troubleshooting real-world issues!!!! Thanks for your time!
 
 **One more thing! If you are wanting to test admin user on the website, I made a mock admin account for you to sign into "TestCoach":
-username:coachTest
+username:coach Test
 password:testCoach
 Enjoy!
 
@@ -59,3 +59,8 @@ During deployment for my website I ran into several issues that required some ti
 All internal file paths were reviewed and I updated to use relative URLs that are compatible with Herokus directory structure. 
 
 Environment configuration was also adjusted to support Herokus JAWSDB_URL for database access (A huge issue I was encountering with other sites), this allowed the app to connect securely to the MySQL database. I hope this is acceptable. Thanks!
+
+Heroku also caused some issues with its direct loading of the site, I had to use a DIRECT link and will provide it here for you:
+https://bjj-vault-finalproject-581d02d1c840.herokuapp.com/users/login.php
+
+That will work and allow you to enter the site. Not sure why the website was giving me issues in that regards. **After doing some digging around, apparently Heroku doesn't support prettyURL's which is frustrating**
