@@ -3,13 +3,13 @@
 session_start();
 
 // Include database configuration and layout header
-require_once '../db/config.php';
-require_once '../includes/header.php';
+require_once __DIR__ . '/../db/config.php';
+require_once __DIR__ . '/../includes/header.php';
 
 // Validating the technique ID passed via GET with IF.
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     echo "<p>Invalid Technique ID.</p>";
-    require_once '../includes/footer.php';
+    require_once __DIR__ . '/../includes/footer.php';
     exit;
 }
 
@@ -23,7 +23,7 @@ $technique = $stmt->fetch();
 // Show error and exit if technique does not exist
 if (!$technique) {
     echo "<p>Technique not found.</p>";
-    require_once '../includes/footer.php';
+    require_once __DIR__ . '/../includes/footer.php';
     exit;
 }
 
@@ -79,7 +79,7 @@ $comments = $comStmt->fetchAll();
 <!-- Show technique image if available -->
 <?php if (!empty($technique['image'])): ?>
     <p><strong>Technique Image:</strong><br>
-        <img src="../<?= htmlspecialchars($technique['image']) ?>" width="400" class="img-fluid">
+        <img src="/<?= htmlspecialchars($technique['image']) ?>" width="400" class="img-fluid">
     </p>
 <?php endif; ?>
 
@@ -121,7 +121,7 @@ $comments = $comStmt->fetchAll();
 
     <div class="mb-3">
         <label>CAPTCHA:</label><br>
-        <img src="../captcha.php" alt="CAPTCHA Image"><br><br>
+        <img src="/captcha.php" alt="CAPTCHA Image"><br><br>
         <input type="text" name="captcha" class="form-control" required>
     </div>
 
@@ -130,4 +130,4 @@ $comments = $comStmt->fetchAll();
 
 <p><a href="/techniques">← Back to List</a></p>
 
-<?php require_once '../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../includes/footer.php'; ?>

@@ -1,6 +1,6 @@
 <?php
-require_once '../users/auth.php';
-require_once '../db/config.php';
+require_once __DIR__ . '/../users/auth.php';
+require_once __DIR__ . '/../db/config.php';
 requireAdmin();
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
@@ -15,7 +15,7 @@ $stmt->execute([':id' => $id]);
 $tech = $stmt->fetch();
 
 if ($tech && !empty($tech['image'])) {
-    $imagePath = "../" . $tech['image'];
+    $imagePath = "/" . $tech['image'];
     if (file_exists($imagePath)) {
         unlink($imagePath); // I'm deleting the image here from our folder
     }

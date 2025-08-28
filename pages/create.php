@@ -5,12 +5,12 @@ ini_set('display_errors', 1);
 ob_start(); // Start output buffering to prevent 'headers already sent' warning
 
 // Ensure the user is authenticated and has admin permissions, super important!
-require_once '../users/auth.php';
+require_once __DIR__ . '/../users/auth.php';
 requireAdmin();
 
 // Include database connection and page header.
-require_once '../db/config.php';
-require_once '../includes/header.php';
+require_once __DIR__ . '/../db/config.php';
+require_once __DIR__ . '/../includes/header.php';
 
 // Load dependencies, including the Intervention Image library for image processing.
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -173,6 +173,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </form>
 
 <?php
-require_once '../includes/footer.php';
+require_once __DIR__ . '/../includes/footer.php';
 ob_end_flush(); // Flush output buffer to prevent header warning
 ?>

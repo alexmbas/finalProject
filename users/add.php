@@ -1,10 +1,10 @@
 <?php
-require_once '../users/auth.php';
+require_once __DIR__ . '/../users/auth.php';
 requireAdmin();
 
 // Include the database connection and layout header
-require_once '../db/config.php';
-require_once '../includes/header.php';
+require_once __DIR__ . '/../db/config.php';
+require_once __DIR__ . '/../includes/header.php';
 
 // Initialize variables for form inputs and error tracking
 $errors = [];
@@ -82,4 +82,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <p><a href="/users">← Back to User List</a></p>
 
-<?php require_once '../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../includes/footer.php'; ?>

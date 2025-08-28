@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-require_once '../db/config.php';
-require_once '../includes/header.php'; 
+require_once __DIR__ . '/../db/config.php';
+require_once __DIR__ . '/../includes/header.php'; 
 
 $username = $password = '';
 $loginError = '';
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['username'] = $user['username'];
             $_SESSION['is_admin'] = $user['is_admin'];
 
-            header("Location: ../pages/list.php");
+            header("Location: /pages/list.php");
             exit;
         } else {
             $loginError = 'Invalid username or password.';
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <button type="submit" class="btn btn-primary">Login</button>
 </form>
 
-<p><a href="../users/users.php">Need an account?</a></p>
-<p><a href="../pages/list.php">← Back to Techniques</a></p>
+<p><a href="/users/users.php">Need an account?</a></p>
+<p><a href="/pages/list.php">← Back to Techniques</a></p>
 
-<?php require_once '../includes/footer.php'; ?>
+<?php require_once '/includes/footer.php'; ?>

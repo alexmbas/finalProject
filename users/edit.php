@@ -2,8 +2,8 @@
 require_once 'auth.php';
 requireAdmin();
 
-require_once '../db/config.php';
-require_once '../includes/header.php';
+require_once __DIR__ . '/../db/config.php';
+require_once __DIR__ . '/../includes/header.php';
 
 // Validate the user ID passed via GET
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
@@ -21,7 +21,7 @@ $user = $stmt->fetch();
 // Show an error if user is not found
 if (!$user) {
     echo "<p>User not found.</p>";
-    require_once '../includes/footer.php';
+    require_once __DIR__ . '/../includes/footer.php';
     exit;
 }
 
@@ -94,4 +94,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <p><a href="manage.php">← Back to User List</a></p>
 
-<?php require_once '../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../includes/footer.php'; ?>

@@ -1,9 +1,9 @@
 <?php
-require_once '../users/auth.php';
+require_once __DIR__ . '/../users/auth.php';
 requireAdmin();
 
-require_once '../db/config.php';
-require_once '../includes/header.php';
+require_once __DIR__ . '/../db/config.php';
+require_once __DIR__ . '/../includes/header.php';
 
 // Handle user deletion if a valid user ID is provided
 if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
@@ -62,4 +62,4 @@ $users = $stmt->fetchAll();
     </table>
 <?php endif; ?>
 
-<?php require_once '../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../includes/footer.php'; ?>

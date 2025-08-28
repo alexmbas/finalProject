@@ -1,11 +1,11 @@
 <?php
 // Requires the user to be logged in as an admin
-require_once '../users/auth.php';
+require_once __DIR__ . '/../users/auth.php';
 requireAdmin();
 
 // Include database configuration and layout header
-require_once '../db/config.php';
-require_once '../includes/header.php';
+require_once __DIR__ . '/../db/config.php';
+require_once __DIR__ . '/../includes/header.php';
 
 // Function to generate a URL friendly slug from technique names, this was weird.
 function makeSlug($string) {
@@ -103,7 +103,7 @@ $techniques = $stmt->fetchAll();
         <td><?= htmlspecialchars($tech['category_name'] ?? 'Uncategorized') ?></td>
         <td>
           <?php if (!empty($tech['image'])): ?>
-            <img src="../<?= htmlspecialchars($tech['image']) ?>" width="80">
+            <img src="/<?= htmlspecialchars($tech['image']) ?>" width="80">
           <?php else: ?>
             No image
           <?php endif; ?>
@@ -131,4 +131,4 @@ $techniques = $stmt->fetchAll();
   </div>
 <?php endif; ?>
 
-<?php require_once '../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../includes/footer.php'; ?>

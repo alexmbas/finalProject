@@ -5,12 +5,12 @@ ini_set('display_errors', 1);
 ob_start();
 
 //Require user to be authenticated and have admin privileges.
-require_once '../users/auth.php';
+require_once __DIR__ . '/../users/auth.php';
 requireAdmin();
 
 // Load database configuration and page layout.
-require_once '../db/config.php';
-require_once '../includes/header.php';
+require_once __DIR__ . '/../db/config.php';
+require_once __DIR__ . '/../includes/header.php';
 
 // Loading Composer autoload and image library.
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -57,7 +57,7 @@ $tech = $stmt->fetch();
 // If no technique is found, display a message and stop processing.
 if (!$tech) {
     echo "<p>Technique not found.</p>";
-    require_once '../includes/footer.php';
+    require_once __DIR__ . '/../includes/footer.php';
     exit;
 }
 
@@ -193,7 +193,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label>Change Image (optional)</label>
         <input class="form-control" type="file" name="image" accept="image/*">
         <?php if (!empty($tech['image'])): ?>
-            <p class="mt-2">Current: <img src="../<?= htmlspecialchars($tech['image']) ?>" width="100"></p>
+            <?php $imgSrc = '/' . ltrim($tech['image'], '/'); ?>
+            <p class="mt-2">Current: <img src="<?= htmlspecialchars($imgSrc) ?>" width="100"></p>
         <?php endif; ?>
     </div>
 
@@ -201,6 +202,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </form>
 
 <?php
-require_once '../includes/footer.php';
+require_once __DIR__ . '/../includes/footer.php';
 ob_end_flush(); // Flush buffer to allow safe header redirection
 ?>

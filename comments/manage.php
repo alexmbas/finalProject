@@ -1,11 +1,11 @@
 <?php
 // Ensure the user is authenticated and has admin privileges, super important for sites editing process.
-require_once '../users/auth.php';
+require_once __DIR__ . '/../users/auth.php';
 requireAdmin();
 
 // Include database configuration and HTML header
-require_once '../db/config.php';
-require_once '../includes/header.php';
+require_once __DIR__ . '/../db/config.php';
+require_once __DIR__ . '/../includes/header.php';
 
 // Handle comment deletion if a valid ID is passed via the URL
 if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
@@ -83,4 +83,4 @@ $comments = $stmt->fetchAll();
     </table>
 <?php endif; ?>
 
-<?php require_once '../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../includes/footer.php'; ?>

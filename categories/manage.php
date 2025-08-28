@@ -1,11 +1,11 @@
 <?php
 // Ensure the user is authenticated and is an admin!
-require_once '../users/auth.php';
+require_once __DIR__ . '/../users/auth.php';
 requireAdmin();
 
 // Include database configuration and page header
-require_once '../db/config.php';
-require_once '../includes/header.php';
+require_once __DIR__ . '/../db/config.php';
+require_once __DIR__ . '/../includes/header.php';
 
 // Initialize an array for validation errors and a variable for success message
 $errors = [];
@@ -93,5 +93,6 @@ $categories = $stmt->fetchAll();
 <?php endif; ?>
 
 <!-- Include the footer -->
-<?php require_once '../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../includes/footer.php'; ?>
+
 

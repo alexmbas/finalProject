@@ -1,7 +1,7 @@
 <?php
 
-require_once '../db/config.php';
-require_once '../includes/header.php';
+require_once __DIR__ . '/../db/config.php';
+require_once __DIR__ . '/../includes/header.php';
 
 // Initialize form field variables and error tracking
 $username = $password = $confirm = '';
@@ -74,6 +74,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </form>
 
 <!-- Link back to techniques page -->
-<p><a href="../pages/list.php">← Back to Techniques</a></p>
+<p><a href="/pages/list.php">← Back to Techniques</a></p>
 
-<?php require_once '../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../includes/footer.php'; ?>
