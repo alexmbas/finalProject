@@ -62,13 +62,18 @@ if (session_status() === PHP_SESSION_NONE) session_start();
     <!-- Logo and Home Link -->
     <a class="navbar-brand" href="/pages/list.php">BJJ VAULT</a>
     
-    <!-- Left side navigation links -->
-    <ul class="navbar-nav me-auto">
+  <!-- Left side navigation links -->
+  <ul class="navbar-nav me-auto">
+    <?php if (!empty($_SESSION['user_id'])): ?>
       <li class="nav-item"><a class="nav-link" href="/pages/create.php">Add Technique</a></li>
+    <?php endif; ?>
+
+    <?php if (!empty($_SESSION['is_admin']) && (int)$_SESSION['is_admin'] === 1): ?>
       <li class="nav-item"><a class="nav-link" href="/categories/manage.php">Categories</a></li>
       <li class="nav-item"><a class="nav-link" href="/users/manage.php">Users</a></li>
       <li class="nav-item"><a class="nav-link" href="/comments/manage.php">Comments</a></li>
-    </ul>
+    <?php endif; ?>
+  </ul>
 
     <!-- Rightside user session controls -->
     <ul class="navbar-nav">

@@ -1,22 +1,30 @@
 <?php
-// Start session to access session variables
-session_start();
+// users/auth.php
+if (session_status() === PHP_SESSION_NONE) { session_start(); }
 
-// Check if a user is logged in
-function isLoggedIn() {
-    return isset($_SESSION['user_id']);
+function isLoggedIn(): bool {
+  return !empty($_SESSION['user_id']);
 }
 
-// Check if the logged-in user has admin privileges
-function isAdmin() {
-    return isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1;
+function isAdmin(): bool {
+  //cast to int for safety
+  return !empty($_SESSION['is_admin']) && (int)$_SESSION['is_admin'] === 1;
 }
-
-// Redirect users who are not logged in or are not admins
-function requireAdmin() {
-    if (!isLoggedIn() || !isAdmin()) {
-        // Send user to the login page if not authorized
-        header("Location: /users/login.php");
-        exit;
-    }
+ // Gate for any logged-in user.If not logged in, go to the real login file.
+function requireLogin(): void {
+  if (!isLoggedIn()) {
+    header('Location: /users/login.php');
+    exit;
+  }
+}
+ // Gate for admins only.If not logged in, then login.If logged in but not admin? Then sending my user somewhere safe that they can view the page, such as /pages/list.php
+function requireAdmin(): void {
+  if (!isLoggedIn()) {
+    header('Location: /users/login.php');
+    exit;
+  }
+  if (!isAdmin()) {
+    header('Location: /pages/list.php');
+    exit;
+  }
 }

@@ -1,7 +1,6 @@
 <?php
 // Requires the user to be logged in as an admin
 require_once __DIR__ . '/../users/auth.php';
-requireAdmin();
 
 // Include database configuration and layout header
 require_once __DIR__ . '/../db/config.php';
