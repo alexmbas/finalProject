@@ -20,7 +20,8 @@ Image::configure(['driver' => 'gd']);
 
 // Include TinyMCE editor for the description textarea. API was giving me grief, figured it out though.
 echo <<<EOT
-<script src="https://cdn.tiny.cloud/1/jafm6iohdfejz973wyxymh0h4xfhwaev8pt02axi7xvzp2t4/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.jsdelivr.net/npm/tinymce@6.8.3/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
 <script>
   tinymce.init({
     selector: 'textarea#description',
