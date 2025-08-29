@@ -6,7 +6,7 @@ ob_start(); // Start output buffering to prevent 'headers already sent' warning
 
 // Ensure the user is authenticated and has admin permissions, super important!
 require_once __DIR__ . '/../users/auth.php';
-requireAdmin();
+requireLogin();
 
 // Include database connection and page header.
 require_once __DIR__ . '/../db/config.php';
@@ -20,7 +20,7 @@ Image::configure(['driver' => 'gd']);
 
 // Load TinyMCE WYSIWYG editor for the description field.
 echo <<<EOT
-<script src="https://cdn.tiny.cloud/1/jafm6iohdfejz973wyxymh0h4xfhwaev8pt02axi7xvzp2t4/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.jsdelivr.net/npm/tinymce@6.8.3/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
   tinymce.init({
     selector: 'textarea#description',

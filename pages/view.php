@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' &&
         unset($_SESSION['captcha']);
 
         // Redirect to avoid form resubmission
-        header("Location: view.php?id=" . $id);
+        header("Location: /pages/view.php?id=" . $id);
         exit;
     }
 }
@@ -121,13 +121,13 @@ $comments = $comStmt->fetchAll();
 
     <div class="mb-3">
         <label>CAPTCHA:</label><br>
-        <img src="/captcha.php" alt="CAPTCHA Image"><br><br>
+        <img src="/captcha.php?ts=<?= time() ?>" alt="CAPTCHA Image"><br><br>
         <input type="text" name="captcha" class="form-control" required>
     </div>
 
     <button type="submit" class="btn btn-primary">Submit Comment</button>
 </form>
 
-<p><a href="/techniques">← Back to List</a></p>
+<p><a href="/pages/list.php">← Back to List</a></p>
 
 <?php require_once __DIR__ . '/../includes/footer.php'; ?>
